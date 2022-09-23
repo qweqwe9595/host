@@ -27,11 +27,6 @@ export default function Navbar(){
             name: "Recipes",
             path: "/recipes",
             icon: faList
-        },
-        {
-            name: "detail",
-            path: "/detail",
-            icon: faCog
         }
     ]
 
