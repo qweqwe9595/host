@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import {
-  HashRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -12,8 +8,7 @@ import Settings from "./pages/Settings";
 import "./index.css";
 import DetailLayout from "detailPage/Layout";
 import SafeComponent from "./SafeComponent";
-import {UserContext} from "host/Store"
-
+import { UserContext } from "host/Store";
 
 function Layout() {
   const [User, setUser] = useState();
@@ -26,7 +21,14 @@ function Layout() {
             <Route path="/" element={<Home />} />
             <Route path="/recipes" element={<Recipes />} />
             <Route path="/settings" element={<Settings />} />
-            <Route path="/detail/:id" element={<DetailLayout />} />
+            <Route
+              path="/detail/:id"
+              element={
+                <SafeComponent>
+                  <DetailLayout />
+                </SafeComponent>
+              }
+            />
           </Routes>
         </div>
         <Footer />
