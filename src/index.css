@@ -22,6 +22,109 @@ body {
   background-color: var(--background-light);
 }
 
+.host{
+  border:2px dashed rgb(0, 0, 0);
+  position: relative;
+  margin-top: 50px;
+  color: rgb(0, 0, 0);
+  padding: 5px;
+}
+
+.host::before{
+  content: 'HOST';
+  position: absolute;
+  border:3px solid rgb(0, 0, 0);
+  width: 300px;
+  z-index: 100;
+  top:-31px;
+  left: -4px;
+  display: flex;
+  justify-content: center;
+}
+
+.remote{
+  border:2px dashed #ff0056;
+  position: relative;
+  margin-top: 50px;
+  color: #ff0056;
+}
+.remote2{
+  border:2px dashed #ee00ff;
+  position: relative;
+  color: #ee00ff;
+}
+.remote2::before{
+  content: 'TEAM DETAIL';
+  position: absolute;
+  border:3px solid #ee00ff;
+  width: 180px;
+  z-index: 100;
+  bottom:-31px;
+  left: -4px;
+  display: flex;
+  justify-content: center;
+}
+.remote::before{
+  content: 'TEAM ADS';
+  position: absolute;
+  border:3px solid #ff0056;
+  width: 300px;
+  z-index: 100;
+  top:-31px;
+  left: -4px;
+  display: flex;
+  justify-content: center;
+}
+
+.remote{
+  border:2px dashed #ff0056;
+  position: relative;
+  margin-top: 50px;
+  color: #ff0056;
+  display: flex;
+  padding: 5px;
+}
+
+.teamAdsAdvertise{
+  border:2px dashed #ff0056;
+  position: relative;
+  margin-top: 50px;
+  color: #ff0056;
+  display: flex;
+}
+
+.teamAdsAdvertise::before{
+  content: 'TEAMADS Advertise';
+  position: absolute;
+  border:3px solid #ff0056;
+  width: 180px;
+  z-index: 100;
+  top:-31px;
+  left: -4px;
+  display: flex;
+  justify-content: center;
+}
+
+.teamAdsSuggestion{
+  border:2px dashed #ff0056;
+  position: relative;
+  margin-top: 50px;
+  color: #ff0056;
+  display: flex;
+}
+
+.teamAdsSuggestion::before{
+  content: 'TEAMADS Advertise';
+  position: absolute;
+  border:3px solid #ff0056;
+  width: 180px;
+  z-index: 100;
+  top:-31px;
+  left: -4px;
+  display: flex;
+  justify-content: center;
+}
+
 a {
   text-decoration: none;
 }
@@ -558,7 +661,7 @@ img {
   padding-block: 3vw;
 }
 
-.container {
+.containerHome {
   padding-inline: 25vw;
 }
 
@@ -620,12 +723,12 @@ img {
   }
 }
 @media screen and (max-width: 1280px) {
-  .container {
+  .containerHome {
     padding-inline: 18vw;
   }
 }
 @media screen and (max-width: 1050px) {
-  .container {
+  .containerHome {
     padding-inline: 12vw;
   }
 }
@@ -654,7 +757,7 @@ img {
   .chief-card {
     box-shadow: 0 5px 10px var(--shadow-color);
   }
-  .container {
+  .containerHome {
     padding-inline: 6vw;
   }
   .footer {
@@ -668,7 +771,7 @@ img {
   }
 }
 @media screen and (max-width: 480px) {
-  .container {
+  .containerHome {
     padding-inline: 3vw;
   }
 }/*# sourceMappingURL=index.css.map */

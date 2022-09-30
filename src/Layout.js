@@ -1,31 +1,30 @@
-import React, { useState } from "react";
+import React, { useState,Suspense } from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import Recipes from "./pages/Recipes";
-import Settings from "./pages/Settings";
 import "./index.css";
-import DetailLayout from "detailPage/Layout";
 import SafeComponent from "./SafeComponent";
 import { UserContext } from "host/Store";
 
+const DetailLayout = React.lazy(() => import("detail/Detail"));
+
 function Layout() {
-  const [User, setUser] = useState();
+  const [User, setUser] = useState([]);
   return (
     <UserContext.Provider value={[User, setUser]}>
       <Router>
         <Navbar />
-        <div className="container main">
+        <div className="containerHome main">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/recipes" element={<Recipes />} />
-            <Route path="/settings" element={<Settings />} />
             <Route
               path="/detail/:id"
               element={
                 <SafeComponent>
-                  <DetailLayout />
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <DetailLayout />
+                  </Suspense>
                 </SafeComponent>
               }
             />
